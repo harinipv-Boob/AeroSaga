@@ -1,0 +1,416 @@
+#root {
+  min-height: 100vh;
+}
+
+.dashboard {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 30px 6%;
+}
+
+.topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  padding-bottom: 25px;
+  border-bottom: 1px solid #29313e;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+}
+
+.brand-icon {
+  display: grid;
+  place-items: center;
+  width: 45px;
+  height: 45px;
+  color: #10151c;
+  background: #a9f56c;
+  border-radius: 13px;
+  font-size: 27px;
+}
+
+.brand h1 {
+  margin: 0;
+  font-size: 19px;
+  letter-spacing: 3px;
+}
+
+.brand p,
+.subtitle {
+  margin: 6px 0 0;
+  color: #98a3b3;
+  font-size: 13px;
+}
+
+.connection {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  color: #c6cfdb;
+  font-size: 13px;
+}
+
+.status-dot {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: #f1b84b;
+}
+
+.status-dot.online {
+  background: #a9f56c;
+  box-shadow: 0 0 12px #a9f56c88;
+}
+
+.welcome {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 25px;
+  padding: 55px 0 35px;
+}
+
+.eyebrow {
+  color: #a9f56c;
+  font-size: 11px;
+  letter-spacing: 2px;
+  font-weight: 700;
+}
+
+.welcome h2,
+.section-heading h2 {
+  margin: 10px 0;
+  font-size: clamp(26px, 4vw, 38px);
+  letter-spacing: -1px;
+}
+
+.date-card {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  min-width: 210px;
+  padding: 20px;
+  background: #171e28;
+  border: 1px solid #29313e;
+  border-radius: 14px;
+}
+
+.date-card span,
+.date-card small {
+  color: #98a3b3;
+  font-size: 11px;
+}
+
+.date-card strong {
+  font-size: 14px;
+}
+
+.stats {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.stat-card {
+  padding: 23px;
+  background: #171e28;
+  border: 1px solid #29313e;
+  border-radius: 14px;
+}
+
+.stat-card span,
+.stat-card small {
+  display: block;
+  color: #98a3b3;
+  font-size: 12px;
+}
+
+.stat-card strong {
+  display: block;
+  margin: 16px 0 8px;
+  font-size: 34px;
+}
+
+.fleet-section {
+  padding: 45px 0;
+}
+
+.section-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 23px;
+}
+
+.section-heading h2 {
+  font-size: 27px;
+}
+
+.fleet-count {
+  padding: 9px 12px;
+  color: #a9f56c;
+  background: #202c24;
+  border-radius: 8px;
+  font-size: 11px;
+}
+
+.drone-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 20px;
+}
+
+.drone-card {
+  padding: 25px;
+  background: #171e28;
+  border: 1px solid #29313e;
+  border-radius: 16px;
+  transition: border-color 0.2s, transform 0.2s;
+}
+
+.drone-card:hover {
+  border-color: #a9f56c;
+  transform: translateY(-3px);
+}
+
+.drone-card-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.drone-symbol {
+  display: grid;
+  place-items: center;
+  width: 48px;
+  height: 48px;
+  background: #252f3c;
+  border-radius: 13px;
+  font-size: 25px;
+}
+
+.available-badge {
+  padding: 7px 10px;
+  color: #a9f56c;
+  background: #202c24;
+  border-radius: 7px;
+  font-size: 10px;
+  letter-spacing: 0.5px;
+}
+
+.drone-number {
+  margin-top: 24px;
+  color: #a9f56c;
+  font-size: 10px;
+  letter-spacing: 2px;
+}
+
+.drone-card h3 {
+  margin: 8px 0;
+  font-size: 21px;
+}
+
+.drone-id {
+  color: #98a3b3;
+  font-size: 12px;
+}
+
+.battery-heading {
+  display: flex;
+  justify-content: space-between;
+  margin: 26px 0 10px;
+  font-size: 12px;
+}
+
+.battery-heading span {
+  color: #98a3b3;
+}
+
+.battery-track {
+  height: 6px;
+  overflow: hidden;
+  background: #303947;
+  border-radius: 20px;
+}
+
+.battery-fill {
+  height: 100%;
+  background: #a9f56c;
+  border-radius: 20px;
+  transition: width 0.3s;
+}
+
+.mission-button {
+  width: 100%;
+  margin-top: 25px;
+  padding: 13px;
+  color: #10151c;
+  background: #a9f56c;
+  border: 0;
+  border-radius: 9px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.mission-button:hover {
+  background: #c2ff91;
+}
+
+.mission-button:disabled {
+  cursor: wait;
+  opacity: 0.65;
+}
+
+.message {
+  margin-bottom: 20px;
+  padding: 14px;
+  color: #dce8d5;
+  background: #202c24;
+  border: 1px solid #435d3b;
+  border-radius: 9px;
+  overflow-wrap: anywhere;
+}
+
+footer {
+  display: flex;
+  justify-content: space-between;
+  gap: 15px;
+  padding: 23px 0;
+  border-top: 1px solid #29313e;
+  color: #8290a1;
+  font-size: 10px;
+  letter-spacing: 1px;
+}
+
+@media (max-width: 700px) {
+  .dashboard {
+    padding: 22px 5%;
+  }
+
+  .welcome {
+    flex-direction: column;
+    align-items: stretch;
+    padding-top: 35px;
+  }
+
+  .stats,
+  .drone-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .topbar {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  footer {
+    flex-direction: column;
+  }
+}
+.mission-info {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin: 22px 0;
+  padding: 14px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.mission-info > span,
+.workflow-id > span {
+  color: #9ca8b8;
+  font-size: 12px;
+}
+
+.mission-info > strong {
+  font-size: 13px;
+  letter-spacing: 0.5px;
+}
+
+.mission-status-idle {
+  color: #aab4c4;
+}
+
+.mission-status-running {
+  color: #facc15;
+}
+
+.mission-status-completed {
+  color: #4ade80;
+}
+
+.mission-status-failed {
+  color: #fb7185;
+}
+
+.workflow-id {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  margin-top: 5px;
+}
+
+.workflow-id small {
+  color: #d5deeb;
+  font-size: 11px;
+  overflow-wrap: anywhere;
+}
+
+.mission-details {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 16px;
+  padding-top: 14px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.mission-detail-row {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.mission-detail-row > span,
+.mission-result > span {
+  font-size: 11px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  opacity: 0.7;
+}
+
+.mission-detail-row strong {
+  font-size: 12px;
+}
+
+.mission-result {
+  padding: 12px;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.mission-result p {
+  margin: 8px 0 0;
+  font-size: 12px;
+  line-height: 1.7;
+  overflow-wrap: anywhere;
+}
+
+.mission-status-completed {
+  color: #5ee6a8;
+}
+
+.mission-status-failed {
+  color: #ff7777;
+}
+
+.mission-status-running {
+  color: #78baff;
+}
