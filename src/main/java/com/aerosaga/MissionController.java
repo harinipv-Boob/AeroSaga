@@ -1,5 +1,7 @@
 package com.aerosaga;
 
+
+import java.util.UUID;
 import com.aerosaga.config.TemporalConfig;
 import com.aerosaga.workflow.DroneMissionWorkflow;
 import io.temporal.api.enums.v1.WorkflowExecutionStatus;
@@ -38,7 +40,7 @@ public MissionController(WorkflowClient workflowClient) {
 public ResponseEntity<Map<String, String>> startMission(
         @PathVariable String droneId) {
 
-    String workflowId = "mission-" + droneId;
+    String workflowId = "mission-" + droneId + "-" + UUID.randomUUID();
 
     DroneMissionWorkflow workflow =
             workflowClient.newWorkflowStub(

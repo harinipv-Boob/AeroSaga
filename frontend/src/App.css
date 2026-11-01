@@ -414,3 +414,63 @@ footer {
 .mission-status-running {
   color: #78baff;
 }
+.mission-timeline {
+  margin-top: 18px;
+  padding: 14px;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.mission-timeline h4 {
+  font-size: 11px;
+  letter-spacing: 1px;
+  margin-bottom: 15px;
+}
+
+.mission-step {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 14px;
+}
+
+.step-indicator {
+  width: 27px;
+  height: 27px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  font-size: 12px;
+  font-weight: bold;
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.step-content {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.step-content strong {
+  font-size: 12px;
+}
+
+.step-content small {
+  font-size: 10px;
+  opacity: 0.7;
+}
+
+.step-indicator.completed {
+  background: rgba(40, 210, 130, 0.2);
+  color: #5ee6a8;
+}
+
+.step-indicator.failed {
+  background: rgba(255, 70, 70, 0.2);
+  color: #ff7777;
+}
+
+.step-indicator.in_progress {
+  background: rgba(70, 150, 255, 0.2);
+  color: #78baff;
+}
