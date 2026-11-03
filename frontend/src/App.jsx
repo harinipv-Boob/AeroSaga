@@ -229,6 +229,44 @@ function App() {
 
     return "mission-status-idle";
   }
+    function getMissionSteps(mission) {
+    const steps = [
+      { name: "Takeoff", status: "PENDING" },
+      { name: "Navigate to Destination", status: "PENDING" },
+      { name: "Drop Package", status: "PENDING" },
+      { name: "Return to Base", status: "PENDING" },
+    ];
+
+    if (!mission) return steps;
+
+    if (mission.deliveryStatus === "DELIVERY_SUCCESSFUL") {
+      return steps.map((step) => ({
+        ...step,
+        status: "COMPLETED",
+      }));
+    }
+
+    if (mission.deliveryStatus === "DELIVERY_FAILED") {
+      steps[0].status = "COMPLETED";
+      steps[1].status = "COMPLETED";
+      steps[2].status = "FAILED";
+
+      if (mission.compensationStatus === "COMPENSATION_COMPLETED") {
+        steps[3].status = "COMPLETED";
+      }
+
+      return steps;
+    }
+
+    if (
+      mission.status === "WORKFLOW_EXECUTION_STATUS_RUNNING" ||
+      mission.status === "STARTING"
+    ) {
+      steps[0].status = "IN_PROGRESS";
+    }
+
+    return steps;
+  }
 
   return (
     <main className="dashboard">
@@ -398,6 +436,26 @@ function App() {
                           )}
                         </strong>
                       </div>
+                      <div className="mission-timeline">
+  <h4>MISSION EXECUTION FLOW</h4>
+
+  {getMissionSteps(mission).map((step, index) => (
+    <div className="mission-step" key={step.name}>
+      <span className={`step-indicator ${step.status.toLowerCase()}`}>
+        {step.status === "COMPLETED"
+          ? "✓"
+          : step.status === "FAILED"
+          ? "✕"
+          : index + 1}
+      </span>
+
+      <div className="step-content">
+        <strong>{step.name}</strong>
+        <small>{step.status.replaceAll("_", " ")}</small>
+      </div>
+    </div>
+  ))}
+</div>
 
                       {mission.missionResult && (
                         <div className="mission-result">
